@@ -1,14 +1,4 @@
-# DataBase
-📂 Database bot by [kurozann](https://t.me/kurozann)
-
-## ```Fetch to```
-```
-https://raw.githubusercontent.com/KuroZann/DataBase/main/command
-```
-## ```Module```
-node-fetch or axios
-
-## ```Example on the WhatsApp bot```
+# example for plugins
 ```
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   conn.chatRead(m.chat);
@@ -20,7 +10,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   });
 
   try {
-    let res = await fetch(`https://raw.githubusercontent.com/KuroZann/DataBase/main/${command}/${command.json}`);
+    let res = await fetch(`https://raw.githubusercontent.com/KuroZann/DataBase/main/Anime/waifu.json`);
     let json = await res.json();
     let anu = json[Math.floor(Math.random() * json.length)];
     
@@ -31,9 +21,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }
 };
 
-handler.help = ['command'].map(v => v + ' */none*');
-handler.tags = ['tags'];
-handler.command =  /^(command)$/i;
+handler.help = ['waifu'].map(v => v + ' */none*');
+handler.tags = ['anime'];
+handler.command =  /^(waifu)$/i;
 
 module.exports = handler;
 ```
